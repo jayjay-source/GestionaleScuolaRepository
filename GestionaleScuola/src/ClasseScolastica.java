@@ -15,23 +15,23 @@ public class ClasseScolastica
         this.nomeClasse = nomeClasse;
         this.studentiClasse = new ArrayList<>();
         this.docentiClasse = new ArrayList<>();
-        this.orarioSettimanaleMaterie = new String[][] // 5 giorni, 5 ore al giorno
+        this.orarioSettimanaleMaterie = new String [5][5];
+        String[] materie = {    "Matematica", "Italiano", "Storia", "Geografia", "Scienze", "Arte", 
+                                "Educazione Fisica", "Inglese"};
+        System.out.println("Orario settimanale per la classe che hai scelto: ");
+        for(int i = 0; i < orarioSettimanaleMaterie.length; i++)
         {
-            {"Matematica", "Italiano", "Storia", "Geografia", "Scienze"},
-            {"Italiano", "Matematica", "Arte", "Educazione Fisica", "Inglese"},
-            {"Storia", "Geografia", "Matematica", "Italiano", "Scienze"},
-            {"Educazione Fisica", "Arte", "Inglese", "Matematica", "Italiano"},
-            {"Scienze", "Storia", "Geografia", "Italiano", "Matematica"}
-        };
+            for(int j = 0; j < orarioSettimanaleMaterie[i].length; j++)
+            {
+                orarioSettimanaleMaterie[i][j] = materie[(int)(Math.random() * materie.length)];
+            }
+        }
     }
 
-    
-
-    public String getNome() {
+    public String getNome() 
+    {
         return nomeClasse;
     }
-
-
 
     //aggiungi Studente/Docente
     public void aggiungiStudenteClasse(Studente s)
