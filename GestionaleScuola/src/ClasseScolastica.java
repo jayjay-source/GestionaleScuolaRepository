@@ -25,6 +25,14 @@ public class ClasseScolastica
         };
     }
 
+    
+
+    public String getNome() {
+        return nomeClasse;
+    }
+
+
+
     //aggiungi Studente/Docente
     public void aggiungiStudenteClasse(Studente s)
     {
@@ -77,34 +85,34 @@ public class ClasseScolastica
     //migliore
     public void miglioreStudenteClasse()
     {
-        double votoMax = Minteger.MIN_VALUE;
-        int index;
+        double votoMax = Integer.MIN_VALUE;
+        int index = 0;
         for(int i = 0; i < studentiClasse.size(); i++)
         {
-            if(studentiClasse[i].mediaVoti() > votoMax)
+            if(studentiClasse.get(i).mediaVoti() > votoMax)
             {
-                votoMax = studentiClasse[i].mediaVoti();
+                votoMax = studentiClasse.get(i).mediaVoti();
                 index = i;
             }
         }
         System.out.println("Lo studente con la migliore media voti nella classe " + nomeClasse + " è: " 
-                            + studentiClasse[index].getNome() + " con una media di " + votoMax);
+                            + studentiClasse.get(index).getNome() + " con una media di " + votoMax);
     }
     //peggiore
     public void peggioreStudenteClasse()
     {
-        double votoMin = Maxteger.MAX_VALUE;
-        int index;
+        double votoMin = Integer.MAX_VALUE;
+        int index = 0;
         for(int i = 0; i < studentiClasse.size(); i++)
         {
-            if(studentiClasse[i].mediaVoti() < votoMin)
+            if(studentiClasse.get(i).mediaVoti() < votoMin)
             {
-                votoMin = studentiClasse[i].mediaVoti();
+                votoMin = studentiClasse.get(i).mediaVoti();
                 index = i;
             }
         }
         System.out.println("Lo studente con la peggiore media voti nella classe " + nomeClasse + " è: " 
-                            + studentiClasse[index].getNome() + " con una media di " + votoMin);
+                            + studentiClasse.get(index).getNome() + " con una media di " + votoMin);
     }
 
     //effettuaInterrogazione(materia):

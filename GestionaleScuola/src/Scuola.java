@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.Comparator;
 
 public class Scuola {
@@ -37,8 +36,8 @@ public class Scuola {
         throw new IllegalArgumentException("Docente con nome '" + nome + "' non trovato.");
     }
 
-    public Classe findClasseByNome (String nome) {
-        for (Classe i : classi) {
+    public ClasseScolastica findClasseByNome (String nome) {
+        for (ClasseScolastica i : classi) {
             if (i.getNome().equals(nome)) {
                 return i;
             }
@@ -56,10 +55,10 @@ public class Scuola {
     }
 
     public Studente findStudenteMediaBassa () {
-        int votoBasso = 11;
-        Studente peggiore;
+        double votoBasso = 11;
+        Studente peggiore = null;
         for (Studente i : studenti) {
-            if (i.MediaVoti() < votoBasso) {
+            if (i.mediaVoti() < votoBasso) {
                 votoBasso = i.mediaVoti();
                 peggiore = i;
             } 
@@ -68,11 +67,11 @@ public class Scuola {
     }
 
     public Studente findStudenteMediaAlta () {
-        int votoAlto = -1;
-        Studente migliore;
+        double votoAlto = -1;
+        Studente migliore = null;
         for (Studente i : studenti) {
-            if (i.MediaVoti() > votoAlto) {
-                votoBasso = i.MediaVoti();
+            if (i.mediaVoti() > votoAlto) {
+                votoAlto = i.mediaVoti();
                 migliore = i;
             } 
         }
