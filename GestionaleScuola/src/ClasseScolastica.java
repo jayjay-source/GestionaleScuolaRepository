@@ -33,6 +33,10 @@ public class ClasseScolastica
         return nomeClasse;
     }
 
+    public String[][] getOrarioSettimanaleMaterie() {
+        return orarioSettimanaleMaterie;
+    }
+
     //aggiungi Studente/Docente
     public void aggiungiStudenteClasse(Studente s)
     {

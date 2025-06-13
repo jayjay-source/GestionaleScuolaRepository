@@ -225,17 +225,15 @@ public class MenuScuola
     public void stampaOrarioSettimanaleScegliClasse()
     {
         ClasseScolastica classeScelta = scegliClasse();
-        String[][] orarioSettimanaleClasseScelta = new String [5][5];
-        String[] materie = {    "Matematica", "Italiano", "Storia", "Geografia", "Scienze", "Arte", 
-                                "Educazione Fisica", "Inglese"};
+        String[][] orario = classeScelta.getOrarioSettimanaleMaterie(); // aggiungi un getter se serve
+        String[] giorni = {"Lun", "Mar", "Mer", "Gio", "Ven"};
         
         System.out.println("Orario settimanale per la classe che hai scelto: ");
-        for(int i = 0; i < orarioSettimanaleClasseScelta.length; i++)
-        {
-            for(int j = 0; j < orarioSettimanaleClasseScelta[i].length; j++)
-            {
-                orarioSettimanaleClasseScelta[i][j] = materie[(int)(Math.random() * materie.length)];
-                System.out.print(orarioSettimanaleClasseScelta[i][j] + " - ");
+        System.out.println("Orario settimanale per la classe " + classeScelta.getNome() + ":");
+        for (int i = 0; i < orario.length; i++) {
+            System.out.print(giorni[i] + ": ");
+            for (int j = 0; j < orario[i].length; j++) {
+                System.out.print(orario[i][j] + " - ");
             }
             System.out.println();
         }
