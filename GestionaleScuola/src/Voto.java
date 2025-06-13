@@ -16,6 +16,15 @@ public class Voto {
         return valutazioneNumerica;
     }
 
+    public void setNomeMateria(String nomeMateria) {
+        this.nomeMateria = nomeMateria;
+    }
+
+    public void setValutazioneNumerica(int valutazioneNumerica) {
+        this.valutazioneNumerica = valutazioneNumerica;
+    }
+
+
     
 
     

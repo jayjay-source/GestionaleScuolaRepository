@@ -10,7 +10,21 @@ public class Docente extends Persona implements Valutabile{
         this.stipendio = stipendio;
     }
 
-    
+    public String getMateria() {
+        return materia;
+    }
+
+    public double getStipendio() {
+        return stipendio;
+    }
+
+    public void setMateria(String materia) {
+        this.materia = materia;
+    }
+
+    public void setStipendio(double stipendio) {
+        this.stipendio = stipendio;
+    }
 
     public void aumentaStipendio(double percentuale){
         stipendio += stipendio * percentuale / 100;
@@ -25,13 +39,8 @@ public class Docente extends Persona implements Valutabile{
         return "Docente: " + nome + " " + cognome + ", materia: " + materia + ", stipendio: " + stipendio;
     }
 
-    public String getMateria() {
-        return materia;
-    }
+    
 
-    public double getStipendio() {
-        return stipendio;
-    }
 
     
 }
