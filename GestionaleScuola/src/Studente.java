@@ -12,6 +12,8 @@ public class Studente extends Persona implements Valutabile{
         this.listaVoti = new ArrayList<>();
     }
 
+    
+
     public void aggiungiVoto(Voto voto){
         listaVoti.add(voto);
     }
@@ -34,6 +36,14 @@ public class Studente extends Persona implements Valutabile{
     @Override
     public String descrizione() {
         return "Studente: " + nome + " " + cognome + ", età: " + eta + ", matricola: " + matricola;
+    }
+
+    public String getMatricola() {
+        return matricola;
+    }
+
+    public List<Voto> getListaVoti() {
+        return listaVoti;
     }
 
     

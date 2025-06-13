@@ -10,7 +10,20 @@ public abstract class Persona {
         this.eta = eta;
     }
 
+    
     public abstract String descrizione();
+
+    public String getNome() {
+        return nome;
+    }
+
+    public String getCognome() {
+        return cognome;
+    }
+
+    public int getEta() {
+        return eta;
+    }
 
     
 

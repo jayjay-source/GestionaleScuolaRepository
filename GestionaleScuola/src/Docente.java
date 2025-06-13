@@ -10,6 +10,8 @@ public class Docente extends Persona implements Valutabile{
         this.stipendio = stipendio;
     }
 
+    
+
     public void aumentaStipendio(double percentuale){
         stipendio += stipendio * percentuale / 100;
     }
@@ -21,6 +23,14 @@ public class Docente extends Persona implements Valutabile{
     @Override
     public String descrizione() {
         return "Docente: " + nome + " " + cognome + ", materia: " + materia + ", stipendio: " + stipendio;
+    }
+
+    public String getMateria() {
+        return materia;
+    }
+
+    public double getStipendio() {
+        return stipendio;
     }
 
     
