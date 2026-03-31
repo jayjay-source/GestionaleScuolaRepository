@@ -1,0 +1,95 @@
+menu , metodi modificato
+private Docente scegliDocente(ArrayList<Docente> listaDocenti){
+        if(listaDocenti.isEmpty()){
+            System.out.println("Nessun docente presente");
+            return null;
+        }
+
+        System.out.println("Docenti disponibili:");
+        for(Docente d : listaDocenti){
+            System.out.println("- " + d.getNome() + d.getCognome());
+        }
+
+        System.out.println("Scegli il docente (nome e cognome):");
+        System.out.println("Nome:");
+        System.out.println("Cognome:");
+        String cognomeDocente = tastiera.nextLine().trim();
+        {
+            if(d.getNome().equalsIgnoreCase(nomeDocente) && d.getCognome().equalsIgnoreCase(cognomeDocente))
+            {
+
+                return d;
+            }
+        }
+        return null;
+    } 
+
+da aggiungere perche non presenti
+
+case 7: simulaInterrogazione(); break;
+            case 8: valutaDocente(); break;
+            case 9: 
+                Docente docenteScelto = scegliDocente(docenti);
+                if (docenteScelto == null) {
+                    break;
+                }
+                aumentoStipendio(docenteScelto);
+                break;
+
+public void simulaInterrogazione() {
+        ClasseScolastica classe = scegliClasse();
+        if (classe == null) return;
+
+        Docente docente = scegliDocente(classe.getDocentiClasse());
+        if (docente == null) return;
+
+        classe.interrogazione(docente.getMateria());
+    }
+
+
+    //implementazione metodo per valutazione docenti
+    public void valutaDocente() {
+        ClasseScolastica classe = scegliClasse();
+        if (classe == null) return;
+
+        Docente docente = scegliDocente(classe.getDocentiClasse());
+        if (docente == null) return;
+
+        ArrayList<Studente> listaStudenti = classe.getStudentiClasse();
+
+        ArrayList<Voto> listaVoti = new ArrayList<>();
+
+        for (Studente s : listaStudenti) {
+            listaVoti.addAll(s.getListaVoti());
+        }
+        int sommaVoti = 0;
+        int votiTot = 0;
+        for (Voto v : listaVoti) {
+            if (v.getNomeMateria().equals(docente.getMateria())) {
+                sommaVoti += v.getValutazioneNumerica();
+                votiTot ++;
+            }
+        }
+
+        double mediaDocente = sommaVoti/votiTot;
+        System.out.println("La media dei voti dati dal docente " + docente.getNome() + " " + docente.getCognome() + " è pari a: " + mediaDocente);
+
+        if (docente.valutaPrestazione(mediaDocente)) {
+            System.out.println("Il docente si è meritato un aumento per gli ottimi risultati");
+            aumentoStipendio(docente);
+        }
+
+    }
+
+    //implementazione metodo per gestire gli stipendi
+    public void aumentoStipendio(Docente docente) {
+        
+        System.out.println("Di quale percentuale aumentare lo stipendio al docente " + docente.getNome() + " " + docente.getCognome() + "?");
+        System.out.println("Stipendio attuale: " + docente.getStipendio());
+        double percentuale = tastiera.nextDouble();
+
+        docente.aumentaStipendio(percentuale);
+
+    }
+
+

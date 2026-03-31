@@ -1,0 +1,10 @@
+classe docente
+public void aumentaStipendio(double percentuale){
+        stipendio += stipendio * percentuale / 100;
+        System.out.println("Stipendio aumentato del " + percentuale + "%");
+        System.out.println("Nuovo stipendio: " + stipendio);
+    }
+    @Override
+    public boolean valutaPrestazione(double votoDocente) {
+        return (votoDocente > 8);
+    } 
